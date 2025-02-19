@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class NPCController : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class NPCController : MonoBehaviour
     public string[] txtNPC;  // NPC 대사 목록
     public Text myText;  // 변화될 대화문들이 입력될 곳
     public int textNumber = 0; // 어떤 텍스트인지 체크해주는 변수
-    bool textOn = false;  // 텍스트 기능을 킬건지 여부
+    public bool isSceneChanger = true;  // on/off 스위치. y를 누를때 씬을 바꿔주는 방구벌레라면 체크하세요. 아니면 체크해제하세요
     bool isTalking = false;  // 대화 중인지 여부
 
     void Start()
@@ -57,20 +58,27 @@ public class NPCController : MonoBehaviour
 
     private IEnumerator ShowDialogue()   // IEumerator는 순차적으로 재생해주는 재생기 역할
     {
-        textOn = true;
+        
 
         while (textNumber < txtNPC.Length)
         {   
             
             myText.text = txtNPC[textNumber];  // 현재 텍스트 표시
             textNumber++; // 다음 텍스트로 이동
-
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));  // F키를 누를 때까지 대기
-
         }
 
-        Debug.Log("대화 종료!");
-        textOn = false;
+        if (isSceneChanger) 
+        { 
+
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.N));
+
+        if (Input.GetKeyDown(KeyCode.Y)) SceneManager.LoadScene("Game");  // 게임 씬으로 이동
+        else Debug.Log("이전 화면으로 이동");  // 뒤로 가기 동작 (필요하면 추가)
+        }
+
+
+
         isTalking = false;  // 대화 끝나면 다시 대화 가능하게 변경
 
     }

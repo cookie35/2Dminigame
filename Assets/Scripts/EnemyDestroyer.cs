@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class EnemyDestroyer : MonoBehaviour
+public class EnemyDestroyer : MonoBehaviour  // 방벽에 부딪히면 게임화면을 넘어서 간 enemy 오브젝트를 없애줍니다.
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

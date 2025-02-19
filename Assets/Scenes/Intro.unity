@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &48323495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48323497}
+  - component: {fileID: 48323496}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &48323496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48323495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ee3478a512de24d92ed67ad95ef716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &48323497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48323495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.471642, y: 0.3699285, z: -0.037746407}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384670555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,6 +4095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e8e015092743a498f780808caa2547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   jumpForce: 6
   forwardSpeed: 5
   isDead: 0
@@ -10292,14 +10337,15 @@ MonoBehaviour:
   txtWindow: {fileID: 498307940}
   txtNPC:
   - "\uBC29\uAD6C \uBC8C\uB808 (F\uB85C \uB300\uD654)"
-  - "\uC774\uBD10. \uB098\uB294 \uCF04\uD0C0\uC6B0\uB85C\uC2A4\uC57C."
-  - "\uC124\uB9C8 \uB098\uB97C \uBC29\uAD6C\uBC8C\uB808\uB85C \uC544\uB294 \uAC74
-    \uC544\uB2C8\uACA0\uC9C0?"
+  - "\uC774\uBD10. \uB098\uB294 \uCF04\uD0C0\uC6B0\uB85C\uC2A4\uC57C.\n\uC124\uB9C8
+    \uB098\uB97C \uBC29\uAD6C\uBC8C\uB808\uB85C \uC544\uB294 \uAC74 \uC544\uB2C8\uACA0\uC9C0?"
+  - ...
   - "\uBD80\uD0C1\uD560 \uC77C\uC774 \uC788\uB2E4."
   - "\uC2E0\uC131\uD55C \uAFC0\uC744 \uBCD1\uB4E0 \uB098\uBB34\uC5D0 \uAC00\uC838\uB2E4\uC918.
-    (Y/N)"
+    (Y\uB85C \uC9C4\uD589)"
   myText: {fileID: 999928242}
   textNumber: 0
+  isSceneChanger: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10310,3 +10356,4 @@ SceneRoots:
   - {fileID: 977429085}
   - {fileID: 2106023077}
   - {fileID: 1318885292}
+  - {fileID: 48323497}

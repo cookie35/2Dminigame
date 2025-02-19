@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameManager gameManager;
     Animator animator = null;
     Rigidbody2D _rigidbody = null;
     SpriteRenderer _spriteRenderer = null;
@@ -65,17 +66,15 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = movementDirection * forwardSpeed;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))  // enemy tag가 달렸는지 체크하고 gameObject를 가져와라.
+        {
+            gameManager.GameOver();  // 부딪힌 게임 오브젝트를 부숴라.
+        }
+    }
 
 
-
-    // 변수 선정
-    // 좌우로 움직임 가능 (스페이스바나 마우스 클릭으로 점프 가능) 
-
-    // 오브젝트와 상호작용 가능 (Collider) -> 말풍선 
-    // 오브젝트와 충돌할 때 반응. 뒤로 밀려나거나 / 폭발하던지 / 쓰러지던지
-
-    // Start is called before the first frame update
-    // Update is called once per frame
 
 
 }

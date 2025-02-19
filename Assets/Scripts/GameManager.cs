@@ -48,33 +48,42 @@ public class GameManager : MonoBehaviour
         if (isGamestart)
         {
             time += Time.deltaTime;
-            nowScore.text = time.ToString("N2");
+            nowScore.text = time.ToString("N1");
         }
 
     }
 
     public void GameClear()
     {
+        recentScore.text = time.ToString("N1");
+        Time.timeScale = 0f;
+        
         if (PlayerPrefs.HasKey(key))
         {
             float best = PlayerPrefs.GetFloat("bestScore");
-            if (best < time)
+            if (best > time)
             {
                 PlayerPrefs.SetFloat("bestScore", time);
-                bestScore.text = time.ToString("N2");
+                bestScore.text = time.ToString("N1");
             }
             else
             {
-                bestScore.text = best.ToString("N2");
+                bestScore.text = best.ToString("N1");
             }
         }
         else
         {
             PlayerPrefs.SetFloat("bestScore", time);
-            bestScore.text = time.ToString("N2");
+            bestScore.text = time.ToString("N1");
         }
-
+        
         endPanel.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameoverPanel.SetActive(true);
     }
 
 }
