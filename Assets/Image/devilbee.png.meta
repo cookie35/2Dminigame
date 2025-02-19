@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e2db5aabc6d1704b836bcf7e1e21960
+guid: b5bfe6f5a4644e743be40296addbefb3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sheet_0
+      name: devilbee_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1977
-        width: 808
-        height: 71
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9441b9bffb5e45a4ab4d448abbc03c0c
-      internalID: 2110090211
+      spriteID: 2508602aa4f836e449e83c7dc6f8019a
+      internalID: 704346760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_1
+      name: devilbee_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1213
-        width: 800
-        height: 480
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f186a1efb0bb5884c885b72a4da80480
-      internalID: 343167472
+      spriteID: 3670a4b9728b0b8459d2616109aa2ade
+      internalID: 1797134113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_2
+      name: devilbee_2
       rect:
         serializedVersion: 2
-        x: 115
-        y: 410
-        width: 107
-        height: 238
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4966f6f33922584d8f3bf2452a8f68a
-      internalID: 809813244
+      spriteID: 4ac4f6adfdfc51f4cbf74a73ffbfb56f
+      internalID: 1815282152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_3
+      name: devilbee_3
       rect:
         serializedVersion: 2
-        x: 324
-        y: 321
-        width: 108
-        height: 238
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a63ff42404ac6d94fa293f1376b30d14
-      internalID: 100752630
+      spriteID: e76b81811fd7d96458d591cd63543d52
+      internalID: -1104168480
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sheet_0: 2110090211
-      sheet_1: 343167472
-      sheet_2: 809813244
-      sheet_3: 100752630
+      devilbee_0: 704346760
+      devilbee_1: 1797134113
+      devilbee_2: 1815282152
+      devilbee_3: -1104168480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
