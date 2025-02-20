@@ -48,11 +48,14 @@ public class NPCController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)  // 충돌해서 머무르는 동안 계속
     {
-        if (collision.CompareTag("Player") && !isTalking && Input.GetKeyDown(KeyCode.F))
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("f누름");
-            isTalking = true;  // 대화 시작 (다시 입력 방지)
-            StartCoroutine(ShowDialogue()); // 대화 시작
+            if (!isTalking && Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("f누름");
+                isTalking = true;  // 대화 시작 (다시 입력 방지)
+                StartCoroutine(ShowDialogue()); // 대화 시작
+            }
         }
     }
 
@@ -61,23 +64,21 @@ public class NPCController : MonoBehaviour
         
 
         while (textNumber < txtNPC.Length)
-        {   
-            
+        {               
             myText.text = txtNPC[textNumber];  // 현재 텍스트 표시
             textNumber++; // 다음 텍스트로 이동
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));  // F키를 누를 때까지 대기
+            // 같은 프레임 안에서 처리가 되다보니 연속으로 눌려있었다... 
+            yield return new WaitForFixedUpdate(); // 더 충분한 시간을 기다리도록
         }
 
         if (isSceneChanger) 
         { 
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.N));
 
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.N));
-
-        if (Input.GetKeyDown(KeyCode.Y)) SceneManager.LoadScene("Game");  // 게임 씬으로 이동
-        else Debug.Log("이전 화면으로 이동");  // 뒤로 가기 동작 (필요하면 추가)
+            if (Input.GetKeyDown(KeyCode.Y)) SceneManager.LoadScene("Game");  // 게임 씬으로 이동
+            else Debug.Log("이전 화면으로 이동");  // 뒤로 가기 동작 (필요하면 추가)
         }
-
-
 
         isTalking = false;  // 대화 끝나면 다시 대화 가능하게 변경
 
